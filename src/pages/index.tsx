@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { SubscribeButton } from "../components/SubscribeButton_";
+import { SubscribeButton } from "../components/SubscribeButton";
 import styles from "../pages/home.module.scss";
 import { stripe } from "../services/stripe";
 
-// 
 interface HomeProps {
   product: {
     priceId: string;
     amount: number;
   }
-} 
+}
 
-export default function Home({product}: HomeProps) {
+export default function Home({ product }: HomeProps) {
   return (
     <>
       <Head>
@@ -23,14 +22,13 @@ export default function Home({product}: HomeProps) {
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
           <h1>
-            {" "}
             News about the <span>React</span> world.
           </h1>
           <p>
             Get access to all the publications <br />
             <span>{product.amount} month</span>
           </p>
-          <SubscribeButton/>
+          <SubscribeButton priceId={product.priceId}/>
         </section>
 
         <img src="/images/avatar.svg" alt="girl coding." />

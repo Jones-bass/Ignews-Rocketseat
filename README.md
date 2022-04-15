@@ -19,6 +19,8 @@ Muito rico em aprendizado, um projeto completo.
 * getServerSideProps - só é executado no lado do servidor e nunca é executado no navegador. Quando você solicita esta página diretamente, getServerSidePropsé executada no momento da solicitação, e esta página será pré-renderizada com os adereços retornados
 
 * Autenticação Next Auth
+* FaunaDB - Banco de Dados praticamente para APP Serveles
+
 
 
 

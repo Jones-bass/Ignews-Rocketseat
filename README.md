@@ -20,8 +20,32 @@ Muito rico em aprendizado, um projeto completo.
 
 * Autenticação Next Auth
 * FaunaDB - Banco de Dados praticamente para APP Serveles
+*JAMStack
+=> Javascript
+=> API
+=> Markup
+
+Options CMS
+* CMS (Content Management System)
+=> Wordpress
+=> Drupal
+=> Joomla
+=> Magento (E-comerce)
+
+* Handless CMS (Painel de administração + API HTTP, GraphQL, SDK)
+
+=> Strapi (Misto)
+=> Ghost (Blog)
+
+=> GraphCMS
+=> Prismic CMS
+=> Contentful
+
+=> Shopify
+=> Saleor
 
 
-
+npx @slicemachine/init --repository ignewsjones 
+npm run slicemachine
 
 

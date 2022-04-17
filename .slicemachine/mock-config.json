@@ -1,5 +1,15 @@
 {
   "_cts": {
-    "ignews": {}
+    "ignews": {
+      "content": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "MySlice": {}
   }
 }

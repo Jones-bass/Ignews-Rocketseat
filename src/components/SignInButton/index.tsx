@@ -8,7 +8,7 @@ export function SignInButton() {
   return session ? (
     <button
       type="button"
-      className="h-12 rounded-lg bg-gray-850 border-0 p-6 flex items-center justify-center text-white font-bold"
+      className="h-12 rounded-full bg-gray-850 border-0 px-6 flex items-center justify-center text-white font-bold transition duration-200 hover:filter hover:brightness-80"
       onClick={() => signOut()}
     >
       <FaGithub className="w-5 h-5 mr-4" color="#04d361" />
@@ -18,7 +18,7 @@ export function SignInButton() {
   ) : (
     <button
       type="button"
-      className="h-12 rounded-xl bg-gray-850 border-0 p-6 flex items-center justify-center text-white font-bold"
+      className="h-12 rounded-full bg-gray-850 border-0 px-6 flex items-center justify-center text-white font-bold transition duration-200 hover:filter hover:brightness-80"
       onClick={() => signIn('github')}
     >
       <FaGithub className="w-5 h-5 mr-4" color="#eba417" />

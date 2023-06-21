@@ -6,18 +6,17 @@ import { ActiveLink } from '../ActiveLink';
 export function Header() {
 
   return (
-    <header className="h-20 border text-gray-800">
-      <div className="px-8 flex items-center text-center justify-between">
+    <header className="h-20 border-b mx-auto text-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center  justify-between">
 
-        <nav className='ml-10 h-20 gap-6 mx-0 flex items-center'>
-
+        <nav className='ml-10 h-20 gap-2 space-x-8 flex items-center  justify-between'>
         <Image  src={imgLogo} alt={"ig.news"} />
 
-          <ActiveLink activeClassName="styles" href="/">
-            <a className='inline-block relative p-0 h-20 leading-10 text-gray-300'>Home</a>
+          <ActiveLink activeClassName="text-white font-bold" href="/">
+            <a className='text-gray-300'>Home</a>
           </ActiveLink>
-          <ActiveLink activeClassName="styles" href="/posts">
-            <a className='inline-block relative p-0 h-20 leading-10 text-cyan'>Posts</a>
+          <ActiveLink activeClassName="text-white font-bold" href="/posts">
+            <a className='text-gray-300'>Posts</a>
           </ActiveLink>
         </nav>
            <SignInButton />

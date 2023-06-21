@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { getSession } from 'next-auth/client'
 import { RichText } from 'prismic-dom'
 import { getPrismicClient } from '../../services/prismic'
-import styles from './post.module.scss'
 
 interface PostProps {
   post: {
@@ -21,12 +20,12 @@ export default function Post({ post }: PostProps) {
         <title>{post.title} | Ignews</title>
       </Head>
 
-      <main className={styles.container}>
-        <article className={styles.post}>
-          <h1>{post.title}</h1>
-          <time>{post.updatedAt}</time>
+      <main className='max-w-[1120px] p-0 m-0 bg-yellow-700'>
+        <article className='max-w-[720px] m-0'>
+          <h1 className='text-5xl font-black'></h1>
+          <time className='block text-base text-gray-300 mt-6'>{post.updatedAt}</time>
           <div
-            className={styles.postContent}
+            className='mt-8 leading-8 text-lg text-gray-100'
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

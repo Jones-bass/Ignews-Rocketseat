@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { RichText } from 'prismic-dom'
 import { useEffect } from 'react'
 import { getPrismicClient } from '../../../services/prismic'
-import styles from '../post.module.scss'
 
 interface PostPreviewProps {
   post: {
@@ -33,16 +32,16 @@ export default function PostPreview({ post }: PostPreviewProps) {
         <title>{post.title} | Ignews</title>
       </Head>
 
-      <main className={styles.container}>
-        <article className={styles.post}>
-          <h1>{post.title}</h1>
-          <time>{post.updatedAt}</time>
+      <main className='max-w-[1120px] p-0 m-0 bg-cyan'>
+        <article className='max-w-[720px] m-0'>
+          <h1 className='text-5xl font-black'>{post.title}</h1>
+          <time className='text-base flex items-center text-gray-300'>{post.updatedAt}</time>
           <div
-            className={`${styles.postContent} ${styles.previewContent}`}
+            className={`${'mt-8 leading-8 text-lg text-gray-100'} ${'bg-gradient-to-t from-gray-100 to-transparent text-transparent'}`}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          <div className={styles.continueReading}>
+          <div className='p-8 text-center bg-gray-850 text-xl font-bold m-16'>
             Wanna continue reading?
             <Link href="/">
               <a>Subscribe now 🤗</a>

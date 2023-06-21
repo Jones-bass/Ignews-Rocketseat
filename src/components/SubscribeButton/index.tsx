@@ -36,7 +36,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   return (
     <button
       type="button"
-      className="w-[260px] h-16 rounded-5xl bg-yellow-500 hover:bg-yellow-700 text-gray-900 text-xl font-bold border-0 flex items-center justify-center mt-8"
+      className="w-[260px] h-16 rounded-full bg-yellow-500 hover:bg-yellow-700 text-gray-900 text-xl font-bold border-0 flex items-center justify-center mt-8"
       onClick={handleSubscribe}
     >
       Subscribe Now

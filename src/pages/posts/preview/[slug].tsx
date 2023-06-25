@@ -24,7 +24,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
     if (session?.activeSubscription) {
       router.push(`/posts/${post.slug}`)
     }
-  }, [session])
+  }, [post.slug, router, session])
 
   return (
     <>
@@ -32,16 +32,18 @@ export default function PostPreview({ post }: PostPreviewProps) {
         <title>{post.title} | Ignews</title>
       </Head>
 
-      <main className='max-w-[1120px] p-0 m-0 bg-cyan'>
-        <article className='max-w-[720px] m-0'>
-          <h1 className='text-5xl font-black'>{post.title}</h1>
-          <time className='text-base flex items-center text-gray-300'>{post.updatedAt}</time>
+      <main className="max-w-[1120px] mx-auto px-2">
+        <div className="max-w-[720px] my-auto mt-5">
+          <h1 className="text-5xl font-black">{post.title}</h1>
+          <time className="text-base flex items-center text-gray-300">
+            {post.updatedAt}
+          </time>
           <div
             className={`${'mt-8 leading-8 text-lg text-gray-100'} ${'bg-gradient-to-t from-gray-100 to-transparent text-transparent'}`}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          <div className='p-8 text-center bg-gray-850 text-xl font-bold m-16'>
+          <div className="p-8 text-center bg-gray-850 text-xl font-bold m-16">
             Wanna continue reading?
             <Link href="/">
               <a>Subscribe now 🤗</a>

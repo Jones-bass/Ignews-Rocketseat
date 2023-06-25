@@ -22,14 +22,18 @@ export default function Posts({ posts }: PostsProps) {
         <title>Posts | Ignews</title>
       </Head>
 
-      <main className='max-w-[1120px] p-0 m-0 bg-cyan'>
-        <div className='max-w-[720px] m-0'>
+      <main className="max-w-[1120px] mx-auto px-2">
+        <div className="max-w-[720px] my-auto mt-5">
           {posts.map((post) => (
             <Link key={post.slug} href={`/posts/${post.slug}`}>
               <a>
-                <time className='text-base flex items-center text-gray-300'>{post.updatedAt}</time>
-                <strong className='block text-2xl mt-4 leading-8'>{post.title}</strong>
-                <p className='text-gray-300 mt-2 leading-6'>{post.excerpt}</p>
+                <time className="text-base flex items-center text-gray-300">
+                  {post.updatedAt}
+                </time>
+                <strong className="block text-2xl mt-4 leading-8">
+                  {post.title}
+                </strong>
+                <p className="text-gray-300 mt-2 leading-6">{post.excerpt}</p>
               </a>
             </Link>
           ))}
@@ -52,23 +56,24 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const posts = response.results.map((post) => {
     const data = post.data as {
-      title: string;
-      content: { type: string; text?: string }[];
-    };
+      title: string
+      content: { type: string; text?: string }[]
+    }
 
     const lastPublicationDate = post.last_publication_date
-    ? new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      })
-    : '';
+      ? new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        })
+      : ''
 
     return {
       slug: post.uid,
       title: data.title,
       excerpt:
-        data.content.find((content) => content.type === 'paragraph')?.text ?? '',
+        data.content.find((content) => content.type === 'paragraph')?.text ??
+        '',
       updatedAt: lastPublicationDate,
     }
   })
@@ -77,6 +82,3 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { posts },
   }
 }
-
-
-

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { SubscribeButton } from '../components/SubscribeButton'
@@ -25,7 +24,9 @@ export default function Home({ product }: HomeProps) {
           </h1>
           <p className="text-2xl leading-9 mt-6">
             Get access to all the publications <br />
-            <span className="font-bold text-cyan">{product.amount} month</span>
+            <span className="font-bold text-cyan">
+              for {product.amount} month
+            </span>
           </p>
           <SubscribeButton priceId={product.priceId} />
         </section>

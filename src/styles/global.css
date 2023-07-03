@@ -5,3 +5,7 @@
 body {
   -webkit-font-smoothing: antialiased; /* or @apply antialiased */
 }
+
+a {
+  color: #d1d1d1;
+}

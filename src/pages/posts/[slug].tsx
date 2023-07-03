@@ -13,6 +13,14 @@ interface PostProps {
   }
 }
 
+interface PrismicResponse {
+  data: {
+    title: string
+    content: string
+  }
+  last_publication_date: string
+}
+
 export default function Post({ post }: PostProps) {
   return (
     <>
@@ -20,14 +28,14 @@ export default function Post({ post }: PostProps) {
         <title>{post.title} | Ignews</title>
       </Head>
 
-      <main className="max-w-[1120px] mx-auto px-2">
+      <main className="max-w-[1120px] mx-auto px-2 ">
         <article className="max-w-[720px] my-auto mt-5">
-          <h1 className="text-3xl font-black">{post.title}</h1>
+          <h1 className="text-3xl mt-16 font-black">{post.title}</h1>
           <time className="block text-base text-gray-300 mt-6">
             {post.updatedAt}
           </time>
           <div
-            className="mt-8 leading-8 text-lg text-gray-100"
+            className="mt-2 leading-8 text-lg text-gray-100 text-justify"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
@@ -47,7 +55,11 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const prismic = getPrismicClient(req)
 
-  const response = await prismic.getByUID('ignews', String(slug), {})
+  const response: PrismicResponse = await prismic.getByUID(
+    'ignews',
+    String(slug),
+    {},
+  )
 
   const post = {
     slug,

@@ -25,8 +25,8 @@ export default function Posts({ posts }: PostsProps) {
       <main className="max-w-[1120px] mx-auto px-2">
         <div className="max-w-[720px] my-auto mt-5">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/posts/${post.slug}`}>
-              <a>
+            <Link  key={post.slug} href={`/posts/${post.slug}`}>
+              <a className='hover:text-yellow-700 block mt-10 pb-8 border-b border-gray-700'>
                 <time className="text-base flex items-center text-gray-300">
                   {post.updatedAt}
                 </time>
